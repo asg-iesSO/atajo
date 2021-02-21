@@ -18,13 +18,9 @@ public class Bicicleta {
         int sum1 = 0;
         int sum2 = 0;
         int sum3 = 0;
-        
-        for(int i=0; i<camino1.length; i++)
-        {
-            sum1 += camino1[i];
-            sum2 += camino2[i];
-            sum3 += camino3[i];
-        }
+        sum1 = getDistancia(camino1);
+        sum2 = getDistancia(camino2);
+        sum3 = getDistancia(camino3);
         
         if(sum1 < sum2 && sum1 < sum3)
         {
@@ -51,7 +47,15 @@ public class Bicicleta {
         
     }
 
-    public static void main(String[] args) {
+    private static int getDistancia(int[] camino) {
+		int sum = 0;
+    	for(int i=0 ; i<camino.length;i++) {
+			sum+= camino[i];
+		}
+		return sum;
+	}
+
+	public static void main(String[] args) {
         Bicicleta bici = new Bicicleta();
         int[] camino1 = {12,34,21,46,25};
         int[] camino2 = {24,1,5,64,10,15,21};
